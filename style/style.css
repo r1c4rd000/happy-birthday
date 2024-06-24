@@ -9,7 +9,7 @@ body {
 
 .container {
   height: 100vh;
-  width: 100vh;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
@@ -17,13 +17,13 @@ body {
   overflow: hidden;
 }
 
-.container div.six {
+.container .six {
   top: 10vh;
   z-index: 1;
 }
 
-.container div.seven,
-.container div.eight {
+.container .seven,
+.container .eight {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -121,13 +121,17 @@ body {
   max-width: 100%;
   height: auto;
 }
-
-.six .hat {
+.dog {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.hat {
   position: absolute;
-  width: 80px;
-  top: -35px;
-  left: 41.5%;
-  /* transform: scale(0.1); */
+  width: 100px;
+  top: 75%;
+  left: 56%;
+  transform: translate(-50%, -50%);
 }
 
 .baloons img {
@@ -234,30 +238,43 @@ body {
 
 /* Media Queries */
 @media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 62%;
-    bottom: 60%;
+  .hat {
+    position: absolute;
+    width: 60px;
+    top: 33%;
+    left: 46%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @media screen and (max-height: 800px) {
-  .six .hat {
-    left: 62%;
-    bottom: 60%;
+  .hat {
+    position: absolute;
+    width: 60px;
+    top: 35%;
+    left: 46%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @media screen and (max-height: 700px) {
-  .six .hat {
-    left: 62%;
-    bottom: 60%;
+
+  .hat {
+    position: absolute;
+    width: 60px;
+    top: 35%;
+    left: 46%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 72%;
-    bottom: 60%;
+  .hat {
+    position: absolute;
+    width: 60px;
+    top: 35%;
+    left: 46%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -283,10 +300,6 @@ body {
     font-size: 10rem;
   }
 
-  .six .hat {
-    width: 50px;
-    top: -20px;
-  }
 
   .wish-hbd {
     font-size: 2.2em;
