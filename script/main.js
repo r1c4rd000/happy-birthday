@@ -37,6 +37,8 @@ const animationTimeline = () => {
     hbd.innerHTML = `<span>${hbd.innerHTML.split("").join("</span><span>")}</span>`;
   }
 
+  const windowHeight = window.innerHeight;
+
   const ideaTextTrans = {
     opacity: 0,
     y: -20,
@@ -124,6 +126,13 @@ const animationTimeline = () => {
       },
       "+=0.0"
     )
+    .add(function() {
+      var audio = document.getElementById('cumple-audio');
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    })
     .from(".idea-1", 0.0, ideaTextTrans)
     .to(".idea-1", 0.0, ideaTextTransLeave, "+=0")
     .from(".idea-2", 0.0, ideaTextTrans)
@@ -197,11 +206,11 @@ const animationTimeline = () => {
       2.5,
       {
         opacity: 0.9,
-        y: 1400
+        y: windowHeight * 1.1 // empieza justo debajo de la pantalla
       },
       {
         opacity: 1,
-        y: -1000
+        y: -windowHeight * 0.7 // termina por arriba de la pantalla
       },
       0.2
     )
@@ -222,6 +231,7 @@ const animationTimeline = () => {
       rotation: -180,
       opacity: 0
     })
+    
     .staggerFrom(
       ".wish-hbd span",
       0.7,
@@ -292,12 +302,21 @@ const animationTimeline = () => {
       opacity: 0
     });
 
+  // ...dentro de animationTimeline, al final:
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
   });
+
+  // Recargar la página 10 segundos después de terminar la animación
+  tl.eventCallback("onComplete", function() {
+    setTimeout(function() {
+      location.reload();
+    }, 40000); // 10000 ms = 10 segundos
+  });
 };
 
-// Run fetch and animation in sequence
-fetchData();
+window.startBirthday = function() {
+  fetchData();
+};

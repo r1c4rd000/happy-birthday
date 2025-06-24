@@ -49,7 +49,7 @@ body {
 }
 
 .two {
-  font-size: 1.2rem;
+  font-size: 4rem;
   font-weight: lighter;
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 .five p {
-  font-size: 2rem;
+  font-size: 4rem;
   position: absolute;
   left: 0;
   right: 0;
@@ -227,7 +227,7 @@ body {
 }
 
 .nine p {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: lighter;
 }
 
@@ -312,5 +312,28 @@ body {
   .nine p {
     font-size: 1.5rem;
     font-weight: lighter;
+  }
+}
+.lydia-dp {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 80vw;   /* No más del 80% del ancho de la pantalla */
+  max-height: 40vh;  /* No más del 40% del alto de la pantalla */
+  width: auto;
+  height: auto;
+  border-radius: 16px; /* Opcional: bordes redondeados */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15); /* Opcional: sombra */
+  object-fit: cover;  /* Recorta si la imagen es muy alta/ancha */
+}
+
+@media (max-width: 600px) {
+  .lydia-dp {
+    max-width: 95vw;
+    max-height: 30vh;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 }
