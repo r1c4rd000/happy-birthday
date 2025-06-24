@@ -68,7 +68,7 @@
           <br>
           <span style="color:#ff0040;">Contraseña 4 dígitos</span>
           <br>
-          <span style="color:#ff0040;">Advertencia: Contraseñas incorrectas serán reportadas</span>
+          <span style="color:#ff0040;">Advertencia: Contraseñas incorrectas serán castigadas</span>
         </h2>
         <input type="password" id="login-code" maxlength="4" placeholder="CÓDIGO" style="
           font-size: 1.3em;
